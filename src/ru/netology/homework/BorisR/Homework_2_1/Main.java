@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class Main {
 
-    static int[] busket = new int[7];
-    static String[] products = {"Хлеб", "Молоко", "Сахар", "Сыр", "Картофель", "Морковь", "Яблоки"};
-    static int[] prices = {34, 75, 49, 740, 48, 44, 68};
-    static int sumProducts = 0;
+    static int[] busket = new int[7]; // Корзина покупок (количество товара)
+    static String[] products = {"Хлеб", "Молоко", "Сахар", "Сыр", "Картофель", "Морковь", "Яблоки"}; // Перечень товаров
+    static int[] prices = {34, 75, 49, 740, 48, 44, 68}; // Перечень цен
+    static int sumProducts = 0; // Сумма покупок
 
     public static void main(String[] args) {
         Scanner choice = new Scanner(System.in);
@@ -20,7 +20,6 @@ public class Main {
             System.out.println("В вашей корзине покупок на сумму " + sumProducts + " руб.");
             String input = choice.next();
             if ("end".equals(input)) {
-            //    buyOn = false;
                 busketFinal(); // Вывод финальной корзины
                 System.out.println("Удачных покупок в будущем. \nДо свидания.");
                 break; // Выход из программы
