@@ -15,7 +15,7 @@ public class homework_2_2_1_Matrix {
             }
             System.out.println("");
         }
-        System.out.println("********************");
+        System.out.println("*********************************");
     }
 
     static void makeMatrix() { // Заполнение оригинальной матрицы

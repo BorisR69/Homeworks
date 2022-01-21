@@ -13,15 +13,18 @@ public class homework_2_2_1 {
 
     public static void main(String[] args) {
 
+        makeMatrix(); // Создание оригинальной матрицы
+        System.out.println("***** Оригинальная  матрица *****");
+        printMatrix(matrix); // Вывод оригинальной матрицы на консоль
+
         Scanner scan = new Scanner(System.in); // Запрос угла поворота матрицы
-        System.out.print("Введите угол поворота матрицы в градусах (90, 180 или 270):\n" + ">>" );
+        System.out.print("\nВведите угол поворота матрицы в градусах (90, 180 или 270):\n" + ">>" );
         angle = scan.nextInt();
 
-        makeMatrix(); // Создание оригинальной матрицы
-        printMatrix(matrix); // Вывод оригинальной матрицы на консоль
         rotatedMatrix (matrix, angle); // Поворот матрицы на заданный угол
         if (angle == 90 || angle == 180 || angle == 270) {
-            printMatrix(rotatedMatrix);  // Вывод мдифицированной матрицы на консоль
+            System.out.println("**** Поворот на " + angle + " градусов ****");
+            printMatrix(rotatedMatrix);  // Вывод модифицированной матрицы на консоль
         }
     }
 
