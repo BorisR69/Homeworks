@@ -20,7 +20,6 @@ public class Main {
             System.out.println("В вашей корзине покупок на сумму " + sumProducts + " руб.");
             String input = choice.next();
             if ("end".equals(input)) {
-            //    buyOn = false;
                 busketFinal(); // Вывод финальной корзины
                 System.out.println("Удачных покупок в будущем. \nДо свидания.");
                 break; // Выход из программы
