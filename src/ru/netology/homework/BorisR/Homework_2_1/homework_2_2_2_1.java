@@ -3,11 +3,12 @@ package ru.netology.homework.BorisR.Homework_2_1;
 public class homework_2_2_2_1 {
 
     public static final int SIZE = 5;
-    public static final char EMPTY = '-';
     public static final char CROSS = 'X';
     public static final char ZERO = 'O';
 
     public static void main(String[] args) {
+
+        char [][] field = new char[SIZE][SIZE];
 
         char [][] field1 = {{'X','X','X','X','X'}, // Матрица 1 (побеждают Х - по горизонтали)
                             {'O','O','O','O','-'},
@@ -45,46 +46,27 @@ public class homework_2_2_2_1 {
             System.out.println("Вариант " + i);
             switch (i) {
                 case 1:
-                    printField(field1);
-                    if (isWin(field1, CROSS)) {
-                    System.out.println("Победили крестики!");
-                    } else if (isWin(field1, ZERO)) {
-                        System.out.println("Победили нолики!");
-                    } else System.out.println("Никто не победил!");
+                    field = field1;
                     break;
                 case 2:
-                    printField(field2);
-                    if (isWin(field2, CROSS)) {
-                        System.out.println("Победили крестики!");
-                    } else if (isWin(field2, ZERO)) {
-                        System.out.println("Победили нолики!");
-                    } else System.out.println("Никто не победил!");
+                    field = field2;
                     break;
                 case 3:
-                    printField(field3);
-                    if (isWin(field3, CROSS)) {
-                        System.out.println("Победили крестики!");
-                    } else if (isWin(field3, ZERO)) {
-                        System.out.println("Победили нолики!");
-                    } else System.out.println("Никто не победил!");
+                    field = field3;
                     break;
                 case 4:
-                    printField(field4);
-                    if (isWin(field4, CROSS)) {
-                        System.out.println("Победили крестики!");
-                    } else if (isWin(field4, ZERO)) {
-                        System.out.println("Победили нолики!");
-                    } else System.out.println("Никто не победил!");
+                    field = field4;
                     break;
                 case 5:
-                    printField(field5);
-                    if (isWin(field5, CROSS)) {
-                        System.out.println("Победили крестики!");
-                    } else if (isWin(field5, ZERO)) {
-                        System.out.println("Победили нолики!");
-                    } else System.out.println("Никто не победил!");
+                    field = field5;
                     break;
             }
+            printField(field);
+            if (isWin(field, CROSS)) {
+                    System.out.println("Победили крестики!");
+            } else if (isWin(field, ZERO)) {
+                    System.out.println("Победили нолики!");
+            } else System.out.println("Никто не победил!");
 
         }
 
@@ -121,8 +103,7 @@ public class homework_2_2_2_1 {
         countWin = 0; // Обнуление счетчика побед перед проверкой первой диагонали
 
         for (int i =0; i < SIZE; i++) { // Проверка первой диагонали
-            int j = i;
-            if (field [i][j] == player) countWin++;
+            if (field [i][i] == player) countWin++;
             if (countWin == SIZE) return true;
         }
         countWin = 0; // Обнуление счетчика побед перед проверкой второй диагонали
@@ -132,7 +113,6 @@ public class homework_2_2_2_1 {
             if (field [i][j] == player) countWin++;
             if (countWin == SIZE) return true;
         }
-
         return false;
     }
 
@@ -145,5 +125,3 @@ public class homework_2_2_2_1 {
         }
     }
 }
-
-
