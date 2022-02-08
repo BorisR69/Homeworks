@@ -1,7 +1,5 @@
 package ru.netology.homework.BorisR.Homework_2_1.Homework_3_3_2.Accounts;
 
-import java.awt.image.PackedColorModel;
-
 public class CheckingAccount extends Account {
 
     public final String NAME = "РАСЧЕТНЫЙ";
