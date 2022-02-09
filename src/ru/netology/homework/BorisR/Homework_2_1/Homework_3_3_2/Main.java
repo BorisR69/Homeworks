@@ -39,6 +39,4 @@ public class Main {
             savingAccount.getAmount(), creditAccount.getName(), creditAccount.getAmount());
 
 }
-
-
 }
