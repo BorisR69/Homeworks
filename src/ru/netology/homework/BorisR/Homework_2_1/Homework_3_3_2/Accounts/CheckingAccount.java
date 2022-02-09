@@ -2,7 +2,7 @@ package ru.netology.homework.BorisR.Homework_2_1.Homework_3_3_2.Accounts;
 
 public class CheckingAccount extends Account {
 
-    public final String NAME = "РАСЧЕТНЫЙ";
+    private final String NAME = "РАСЧЕТНЫЙ";
 
     public CheckingAccount(int amount) {
         super(amount);

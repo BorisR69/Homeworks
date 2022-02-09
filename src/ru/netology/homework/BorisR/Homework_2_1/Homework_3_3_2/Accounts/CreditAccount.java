@@ -2,7 +2,7 @@ package ru.netology.homework.BorisR.Homework_2_1.Homework_3_3_2.Accounts;
 
 public class CreditAccount extends Account {
 
-    public final String NAME = "КРЕДИТНЫЙ";
+    private final String NAME = "КРЕДИТНЫЙ";
 
     public CreditAccount(int amount) {
         super(amount);
