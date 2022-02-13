@@ -9,6 +9,10 @@ public class CreditAccount extends Account {
         setName(NAME);
     }
 
+    public String getNAME (){
+        return NAME;
+    }
+
     @Override
     public void pay(int amount) {
             setAmount(getAmount() - amount);
@@ -17,10 +21,26 @@ public class CreditAccount extends Account {
 
     @Override
     public void transfer(Account account, int amount) {
-            setAmount(getAmount() - amount);
-            account.setAmount(account.getAmount() + amount);
-            System.out.println("Осуществлен перевод на счет " + account.getName() + " на сумму " + amount +
-                    " руб. Остаток на счете: " + getAmount());
+        switch (account.getName()) {
+            case "КРЕДИТНЫЙ":
+                if ((account.getAmount() + amount) <= 0) {
+                    setAmount(getAmount() - amount);
+                    account.setAmount(account.getAmount() + amount);
+                    System.out.printf("Осуществлен перевод на счет %s на сумму %s руб. Остаток на счете: %s руб. \n",
+                            account.getName(), amount, getAmount());
+                } else {
+                    System.out.println("Нельзя перевести на счет КРЕДИТНЫЙ сумму " + amount + " руб., т.к. " +
+                            "баланс счета " + "станет " + "положительным!");
+                }
+                break;
+            case "СБЕРЕГАТЕЛЬНЫЙ":
+            case "РАСЧЕТНЫЙ":
+                setAmount(getAmount() - amount);
+                account.setAmount(account.getAmount() + amount);
+                System.out.printf("Осуществлен перевод на счет %s на сумму %s руб. Остаток на счете: %s руб. \n",
+                        account.getName(), amount, getAmount());
+                break;
+        }
     }
 
     @Override

@@ -1,10 +1,5 @@
 package ru.netology.homework.BorisR.Homework_2_1.Homework_3_3_1;
 
-//import ru.netology.homework.BorisR.Homework_2_1.Homework_3_3_1.Interfaces.Administrator;
-//import ru.netology.homework.BorisR.Homework_2_1.Homework_3_3_1.Interfaces.Librarian;
-//import ru.netology.homework.BorisR.Homework_2_1.Homework_3_3_1.Interfaces.Reader;
-//import ru.netology.homework.BorisR.Homework_2_1.Homework_3_3_1.Interfaces.Supplier;
-
 public class Main {
     public static void main (String [] Args){
 

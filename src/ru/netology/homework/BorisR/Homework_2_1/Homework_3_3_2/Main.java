@@ -7,7 +7,7 @@ public class Main {
 
     Account checkingAccount = new CheckingAccount(500);
     Account savingAccount = new SavingsAccount(200);
-    Account creditAccount = new CreditAccount(0);
+    Account creditAccount = new CreditAccount(-200);
 
     System.out.printf("\n**** Операции со счетом %s ****\nОстаток на счете: %s руб.\n", checkingAccount.getName(),
             checkingAccount.getAmount());
@@ -16,6 +16,7 @@ public class Main {
     checkingAccount.pay(1000);
     checkingAccount.transfer(savingAccount, 100);
     checkingAccount.transfer(savingAccount, 1000);
+    checkingAccount.transfer(creditAccount, 50);
 
     System.out.printf("\n**** Операции со счетом %s ****\nОстаток на счете: %s руб.\n", savingAccount.getName(),
             savingAccount.getAmount());
@@ -24,6 +25,7 @@ public class Main {
     savingAccount.pay(1000);
     savingAccount.transfer(checkingAccount, 50);
     savingAccount.transfer(checkingAccount, 1000);
+    savingAccount.transfer(creditAccount, 500);
 
     System.out.printf("\n**** Операции со счетом %s ****\nОстаток на счете: %s руб.\n", creditAccount.getName(),
             creditAccount.getAmount());
