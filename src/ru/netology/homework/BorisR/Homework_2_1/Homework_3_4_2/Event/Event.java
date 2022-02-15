@@ -1,22 +1,20 @@
 package ru.netology.homework.BorisR.Homework_2_1.Homework_3_4_2.Event;
 
-import java.time.Year;
-
 public abstract class Event {
     public String title;
-    public Year releaseYear;
+    public int releaseYear;
     public int age;
 
     public Event (String title){
         this.title = title;
     }
 
-    public Event (String title, Year releaseYear){
+    public Event (String title, int releaseYear){
         this.title = title;
         this.releaseYear = releaseYear;
     }
 
-    public Event (String title, Year releaseYear, int age){
+    public Event (String title, int releaseYear, int age){
         this.title = title;
         this.releaseYear = releaseYear;
         this.age = age;
@@ -28,7 +26,4 @@ public abstract class Event {
                 + this.age;
         return eventNew;
     }
-
-
-
 }
