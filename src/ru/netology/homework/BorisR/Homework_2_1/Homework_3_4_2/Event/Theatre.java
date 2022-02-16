@@ -13,8 +13,7 @@ public class Theatre extends Event{
 
     @Override
     public String toString () {
-        String eventNew = "Спектакль: " + this.title + ". Год создания: " + this.releaseYear +
-                ". Возрастные ограничения: " + this.age;
-        return eventNew;
+        return "Спектакль: " + this.title + ". Год создания: " + this.releaseYear + ". Возрастные ограничения: " +
+                this.age;
     }
 }

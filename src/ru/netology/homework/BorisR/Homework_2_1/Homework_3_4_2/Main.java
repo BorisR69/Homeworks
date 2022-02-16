@@ -16,7 +16,7 @@ public class Main {
 
     public static Film[] getMovies() {
         return new Film[]{
-                new Film("Billions", 2020, 18),
+                new Film("Billions",2019, 16),
                 new Film("Snowpricer"),
                 new Film("A Discovery of Witches", 2019, 18),
         };
@@ -31,8 +31,8 @@ public class Main {
     }
 
     public static void validEvent(Event event) throws EventRuntimeException {
-        if (event.title.equals(null) || event.releaseYear == 0 || event.age == 0){
-            System.out.println(event.toString());
+        if (event.getTitle() == null || event.getReleaseYear() == 0 || event.getAge() == 0){
+            System.out.println(event);
             throw new EventRuntimeException("Не все поля заполнены!");
         }
     }

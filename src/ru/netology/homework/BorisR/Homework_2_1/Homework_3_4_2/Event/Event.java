@@ -5,6 +5,10 @@ public abstract class Event {
     public int releaseYear;
     public int age;
 
+    public Event (int releaseYear){
+        this.releaseYear = releaseYear;
+    }
+
     public Event (String title){
         this.title = title;
     }
@@ -22,8 +26,18 @@ public abstract class Event {
 
     @Override
     public String toString (){
-        String eventNew = "Событие: " + this.title + ". Год создания: "+ this.releaseYear + ". Возрастные ограничения: "
-                + this.age;
-        return eventNew;
+        return "Событие: " + this.title + ". Год создания: "+ this.releaseYear + ". Возрастные ограничения: " + this.age;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public int getReleaseYear() {
+        return releaseYear;
+    }
+
+    public int getAge() {
+        return age;
     }
 }

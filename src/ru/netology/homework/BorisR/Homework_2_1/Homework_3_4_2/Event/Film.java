@@ -2,6 +2,10 @@ package ru.netology.homework.BorisR.Homework_2_1.Homework_3_4_2.Event;
 
 public class Film extends Event{
 
+    public Film (int releaseYear) {
+        super(releaseYear);
+    }
+
     public Film (String title) {
         super(title);
     }
@@ -12,8 +16,6 @@ public class Film extends Event{
 
     @Override
     public String toString () {
-        String eventNew = "Фильм: " + this.title + ". Год создания: " + this.releaseYear +
-                ". Возрастные ограничения: " + this.age;
-        return eventNew;
+        return "Фильм: " + this.title + ". Год создания: " + this.releaseYear + ". Возрастные ограничения: " + this.age;
     }
 }

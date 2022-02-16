@@ -12,4 +12,16 @@ public class User {
         this.age = age;
         this.email = email;
     }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public int getAge() {
+        return age;
+    }
 }

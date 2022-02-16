@@ -33,7 +33,7 @@ public class Main {
     public static User getUserByLoginAndPassword(String login, String password) throws UserNotFoundException {
         User[] users = getUsers();
         for (User user : users) {
-            if (user.login.equals(login) && user.password.equals(password)){
+            if (user.getLogin().equals(login) && user.getPassword().equals(password)){
                 return user;
             }
         }
@@ -41,7 +41,7 @@ public class Main {
     }
 
     public static void validateUser(User user) throws AccessDeniedException{
-        if (user.age >= 18) {
+        if (user.getAge() >= 18) {
             enter = true;
         } else {
             throw new AccessDeniedException("Возраст недостаточен для доступа к ресурсу!");
