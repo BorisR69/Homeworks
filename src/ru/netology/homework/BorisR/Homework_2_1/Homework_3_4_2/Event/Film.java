@@ -16,6 +16,6 @@ public class Film extends Event{
 
     @Override
     public String toString () {
-        return "Фильм: " + this.title + ". Год создания: " + this.releaseYear + ". Возрастные ограничения: " + this.age;
+        return "Фильм: " + getTitle() + ". Год создания: " + getReleaseYear() + ". Возрастные ограничения: " + getAge();
     }
 }

@@ -2,7 +2,6 @@ package ru.netology.homework.BorisR.Homework_2_1.Homework_3_4_2.Event;
 
 public class Theatre extends Event{
 
-
     public Theatre (String title) {
         super(title);
     }
@@ -13,7 +12,7 @@ public class Theatre extends Event{
 
     @Override
     public String toString () {
-        return "Спектакль: " + this.title + ". Год создания: " + this.releaseYear + ". Возрастные ограничения: " +
-                this.age;
+        return "Спектакль: " + getTitle() + ". Год создания: " + getReleaseYear() + ". Возрастные ограничения: " +
+                getAge();
     }
 }

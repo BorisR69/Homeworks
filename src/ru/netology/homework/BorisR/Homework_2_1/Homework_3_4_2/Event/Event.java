@@ -1,9 +1,9 @@
 package ru.netology.homework.BorisR.Homework_2_1.Homework_3_4_2.Event;
 
 public abstract class Event {
-    public String title;
-    public int releaseYear;
-    public int age;
+    private String title;
+    private int releaseYear;
+    private int age;
 
     public Event (int releaseYear){
         this.releaseYear = releaseYear;

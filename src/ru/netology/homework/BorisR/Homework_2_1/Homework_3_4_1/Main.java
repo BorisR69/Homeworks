@@ -37,7 +37,7 @@ public class Main {
                 return user;
             }
         }
-        throw new UserNotFoundException("Пользователь не найден!");
+        throw new UserNotFoundException("Пользователь не найден или пароль неверный!");
     }
 
     public static void validateUser(User user) throws AccessDeniedException{
