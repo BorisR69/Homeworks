@@ -14,48 +14,38 @@ public class CheckingAccount extends Account {
     }
 
     @Override
-    public void pay(int amount) {
+    public boolean pay(int amount) {
         if (getAmount() >= amount) {
             setAmount(getAmount() - amount);
             System.out.printf("Осуществлен платеж на сумму %s руб. Остаток на счете: %s руб.\n", amount, getAmount());
+            return true;
         } else {
             System.out.printf("Платеж на сумму %s руб. не может быть проведен. Недостаточно средств на счете!\n",
                     amount);
+            return false;
         }
     }
 
     @Override
-    public void transfer(Account account, int amount) {
-        if (getAmount() >= amount) {
-            switch (account.getName()) {
-                case "КРЕДИТНЫЙ":
-                    if ((account.getAmount() + amount) <= 0) {
-                        setAmount(getAmount() - amount);
-                        account.setAmount(account.getAmount() + amount);
-                        System.out.printf("Осуществлен перевод на счет %s на сумму %s руб. Остаток на счете: %s руб. \n",
-                                account.getName(), amount, getAmount());
-                    } else {
-                        System.out.println("Нельзя перевести на счет КРЕДИТНЫЙ сумму " + amount + " руб., т.к. " +
-                                "баланс счета " + "станет " + "положительным!");
-                    }
-                    break;
-                case "СБЕРЕГАТЕЛЬНЫЙ":
-                case "РАСЧЕТНЫЙ":
-                    setAmount(getAmount() - amount);
-                    account.setAmount(account.getAmount() + amount);
-                    System.out.printf("Осуществлен перевод на счет %s на сумму %s руб. Остаток на счете: %s руб. \n",
-                            account.getName(), amount, getAmount());
-                    break;
-            }
-            } else{
-                System.out.printf("Перевод на сумму %s руб. не может быть проведен. Недостаточно средств на счете!\n",
-                        amount);
-            }
+    public boolean transfer(Account account, int amount) {
+        if (getAmount() < amount) {
+            System.out.printf("Перевод на сумму %s руб. не может быть проведен. Недостаточно средств на счете!\n",
+                    amount);
+            return false;
+        }
+        final boolean result = account.addMoney(amount);
+        if (result) {
+            setAmount(getAmount() - amount);
+            System.out.printf("Осуществлен перевод на счет %s на сумму %s руб. Остаток на счете: %s руб. \n",
+                        account.getName(), amount, getAmount());
+        }   return result;
         }
 
     @Override
-    public void addMoney(int amount) {
+    public boolean addMoney(int amount) {
         setAmount(getAmount() + amount);
-        System.out.printf("Пополнение счета на %s руб. Остаток на счете: %s руб.\n", amount, getAmount());
+        System.out.printf("Поступление на счет %s на %s руб. Остаток на счете %s: %s руб.\n", getNAME(), amount,
+                getNAME(), getAmount());
+        return true;
     }
 }
