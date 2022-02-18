@@ -21,5 +21,4 @@ public abstract class Account {
 
     public abstract boolean addMoney(int amount);
 
-
 }
