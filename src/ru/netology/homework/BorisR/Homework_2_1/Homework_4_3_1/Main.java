@@ -1,28 +1,32 @@
 package ru.netology.homework.BorisR.Homework_2_1.Homework_4_3_1;
 
-import ru.netology.homework.BorisR.Homework_2_1.Homework_4_3_1.PhoneContacts.Contact;
+import ru.netology.homework.BorisR.Homework_2_1.Homework_4_3_1.PhoneContacts.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import static ru.netology.homework.BorisR.Homework_2_1.Homework_4_3_1.PhoneContacts.PhoneBook.*;
 
 public class Main {
 
-    public static void main (String[] Args) throws IndexOutOfBoundsException{
+    public static void main (String[] Args) {
 
-        try {
-            List<Contact> contactList = new ArrayList<>();
-            contactList.add(0, new Contact("Ivan", "89286784345"));
-            contactList.add(1, new Contact("Mikle", "89184435578"));
-            contactList.add(2, new Contact("Kate", "89524456788"));
-            contactList.add(3, new Contact("Roman", "89523458778"));
-            contactList.add(4, new Contact("Olga", "89285672354"));
-            System.out.println(contactList);
-        } catch (IndexOutOfBoundsException exception){
-            System.out.println("Error!");
-        }
+        PhoneBook phoneBook = new PhoneBook();
+        writeGroups(phoneBook);
+        writeContacts(phoneBook);
 
+        System.out.println("Contact by phone number: " + phoneBook.findContactByPhone("23456"));
 
+    }
 
+    private static void writeGroups(PhoneBook phoneBook) {
+        phoneBook.addGroup("Family");
+        phoneBook.addGroup("Work");
+        phoneBook.addGroup("Friends");
+        phoneBook.addGroup("Chiefs");
+    }
 
+    private static void writeContacts (PhoneBook phoneBook) {
+        phoneBook.addContactToGroup(createContact("George","12345"),"Family", "Friends");
+        phoneBook.addContactToGroup(createContact("Olga", "23456"), "Family");
+        phoneBook.addContactToGroup(createContact("Nick", "34567"), "Work", "Friends");
+        phoneBook.addContactToGroup(createContact("Julia", "45678"), "Chiefs");
     }
 }
