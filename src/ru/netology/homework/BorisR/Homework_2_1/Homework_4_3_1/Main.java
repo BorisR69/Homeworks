@@ -8,22 +8,31 @@ public class Main {
 
     public static void main (String[] Args) {
 
-        PhoneBook phoneBook = new PhoneBook();
-        writeGroups(phoneBook);
-        writeContacts(phoneBook);
+        String testNumber = "23456";
+        String testGroup = "Family";
 
-        System.out.println("Contact by phone number: " + phoneBook.findContactByPhone("23456"));
+        PhoneBook phoneBook = new PhoneBook();
+        writeGroups(phoneBook); // Наполнение списка групп контактов
+        writeContacts(phoneBook); // Наполнение списка контактов
+
+        // Вывод контакта по номеру телефона
+        System.out.println("Contact by phone number: " + phoneBook.findContactByPhone(testNumber));
+        // Вывод списка всех контактов из группы
+        System.out.println("All contacts in group " + testGroup + " :");
+        for (Contact contact: phoneBook.findContactsByGroup(testGroup)) {
+            System.out.println(contact);
+        }
 
     }
 
-    private static void writeGroups(PhoneBook phoneBook) {
+    private static void writeGroups(PhoneBook phoneBook) { // Наполнение списка групп контактов
         phoneBook.addGroup("Family");
         phoneBook.addGroup("Work");
         phoneBook.addGroup("Friends");
         phoneBook.addGroup("Chiefs");
     }
 
-    private static void writeContacts (PhoneBook phoneBook) {
+    private static void writeContacts (PhoneBook phoneBook) { // Наполнение списка контактов
         phoneBook.addContactToGroup(createContact("George","12345"),"Family", "Friends");
         phoneBook.addContactToGroup(createContact("Olga", "23456"), "Family");
         phoneBook.addContactToGroup(createContact("Nick", "34567"), "Work", "Friends");
