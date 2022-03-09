@@ -1,5 +1,7 @@
 package ru.netology.homework.BorisR.Homework_2_1.Homework_4_3_2;
 
+import java.util.Objects;
+
 public class Student {
     private String name;
     private String group;
@@ -19,19 +21,21 @@ public class Student {
         this.name = name;
     }
 
-    public String getGroup() {
-        return group;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return StudentId.equals(student.StudentId);
     }
 
-    public void setGroup(String group) {
-        this.group = group;
+    @Override
+    public int hashCode() {
+        return Objects.hash(StudentId);
     }
 
-    public String getStudentId() {
-        return StudentId;
-    }
-
-    public void setStudentId(String studentId) {
-        StudentId = studentId;
+    @Override
+    public String toString() {
+        return "- " + name + ", " + group + ", " + StudentId;
     }
 }

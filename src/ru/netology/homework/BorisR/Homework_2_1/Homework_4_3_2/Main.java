@@ -8,11 +8,11 @@ public class Main {
     public static Set<Student> studentList = new HashSet<>();
 
     public static void main (String[] Args){
-        printMenu();
-        System.out.println(studentList.size());
+        printMenu(); // Вызов меню ввода студентов
+        printStudentList(studentList); // Вызов вывода списка студентов
     }
 
-    public static void printMenu(){
+    public static void printMenu(){ // Меню ввода студентов
         Scanner inp = new Scanner(System.in);
         while (true) {
             System.out.print("\nВведите информацию о студенте (для завершения работы программы введите \"end\")\n>>");
@@ -25,14 +25,16 @@ public class Main {
         }
     }
 
-    public static void createStudentList(String input){
+    public static void createStudentList(String input){ // Создание записи в списке студентов
         String[] student = input.split(",\\s");
-        Student studentNew = new Student(student[1], student[2], student[0]);
+        Student studentNew = new Student(student[0], student[1], student[2]);
         studentList.add(studentNew);
     }
 
-//    public static void printStudenList (Student studentList){
-//        for (Set<Student> s: studentList) {
-//        }
-//    }
+    public static void printStudentList (Set <Student> studentList){ // Вывод списка студентов
+        System.out.println("Список студентов: ");
+        for (Student s: studentList) {
+            System.out.println(s);
+        }
+    }
 }
