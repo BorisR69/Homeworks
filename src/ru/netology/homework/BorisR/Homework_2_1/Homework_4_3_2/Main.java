@@ -28,7 +28,11 @@ public class Main {
     public static void createStudentList(String input){ // Создание записи в списке студентов
         String[] student = input.split(",\\s");
         Student studentNew = new Student(student[0], student[1], student[2]);
-        studentList.add(studentNew);
+        if (studentList.contains(studentNew)) {
+            System.out.println("Студент с таким Id уже существует, запись не сохранена!");
+        } else {
+            studentList.add(studentNew);
+        }
     }
 
     public static void printStudentList (Set <Student> studentList){ // Вывод списка студентов
